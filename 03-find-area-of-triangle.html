@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Area of Triangle</h1>
+	<form>
+		<h3>Base</h3>
+		<input type="text" name="Base" placeholder="Base" id="base">
+		<h3>Height</h3>
+		<input type="text" name="Height" placeholder="Height" id="height">
+		<br>
+		<br>
+		<input type="submit" onclick="formula()" name="submit" id="submit">
+	</form>
+	<br>
+	<h2>Area</h2>
+	<div id="answer"></div>
+	<script>
+		function formula() {
+			var b = document.querySelector("#base").value;
+			var h = document.querySelector("#height").value;
+			var mul = parseInt(b)*parseInt(h);
+			var ans = mul/2;
+
+			iH = document.createElement('h4');
+			iH.innerHTML = ans;
+	
+			document.querySelector('#answer').appendChild(iH);
+		}
+	</script>
+</body>
+</html>
