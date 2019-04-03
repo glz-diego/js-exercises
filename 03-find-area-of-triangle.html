@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Area of Triangle</title>
 </head>
 <body>
 	<h1>Area of Triangle</h1>
-	<form>
-		<h3>Base</h3>
-		<input type="text" name="Base" placeholder="Base" id="base">
-		<h3>Height</h3>
-		<input type="text" name="Height" placeholder="Height" id="height">
-		<br>
-		<br>
-		<input type="submit" onclick="formula()" name="submit" id="submit">
-	</form>
+	<h2>Sides:</h2>
+	<input type="text" name="a" id="a" placeholder="a">
+	<input type="text" name="b" id="b" placeholder="b">
+	<input type="text" name="c" id="c" placeholder="c">
+	<button id="ent">Enter</button>
 	<br>
-	<h2>Area</h2>
-	<div id="answer"></div>
+	<br>
+	<img src="captura1.jpg">
+	<h2>Area: <span id="ans"></span></h2>
 	<script>
-		function formula() {
-			var b = document.querySelector("#base").value;
-			var h = document.querySelector("#height").value;
-			var mul = parseInt(b)*parseInt(h);
-			var ans = mul/2;
+		var ent = document.getElementById('ent')
+		ent.addEventListener("click", formula);
 
-			iH = document.createElement('h4');
-			iH.innerHTML = ans;
-	
-			document.querySelector('#answer').appendChild(iH);
+		var sa = document.querySelector('#ans');
+		function formula() {
+		if (sa != "") {
+			document.querySelector("#ans").value = "";
+		}
+
+		var a = document.querySelector("#a").value;
+		var b = document.querySelector("#b").value;
+		var c = document.querySelector("#c").value;
+		var p = (parseInt(a)+parseInt(b)+parseInt(c))/2;
+		var frm = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+			iH = document.createElement('span');
+			iH.innerHTML = frm;
+			document.querySelector('#ans').appendChild(iH);
+			console.log(frm);
+			if (a != "") {
+				document.querySelector("#a").value = "";
+			}
+			if (b != "") {
+				document.querySelector("#b").value = "";
+			}
+			if (c != "") {
+				document.querySelector("#c").value = "";
+			}
 		}
 	</script>
 </body>
