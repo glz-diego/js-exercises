@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Reverse a number</h1>
+	<h2>Enter #:</h2>
+	<input type="number" name="number" id="num">
+	<button id="ent">Enter</button>
+	<h3 id="ans">Reversed #: </h3>
+	<script>
+		var ent = document.getElementById('ent')
+		ent.addEventListener("click", reverse);
+
+		function reverse() {
+			var num = document.getElementById('num').value;
+			var ans = num.split('').reverse().join('');
+			iN = document.createElement('span');
+			iN.innerHTML = ans;
+			document.querySelector('#ans').appendChild(iN);
+			console.log(ans);
+		}
+	</script>
+</body>
+</html>
