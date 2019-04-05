@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Coin Converter</h1>
+	<h2>Enter amount:</h2>
+	<input type="number" name="amount" id="full">
+	<button id="ent">Enter</button>
+	<h3 id="quarters"> Quarters: </h3>
+	<h3 id="dimes"> Dimes: </h3>
+	<h3 id="nickels"> Nickels: </h3>
+	<h3 id="pennies"> Pennies: </h3>
+	<script>
+		var ent = document.getElementById('ent')
+		ent.addEventListener("click", sort);
+
+		function quarters(a) {
+			var qa = 0;
+			var q = .25;
+
+			if(a%q == 0){
+				for(q; q < a; qa++){
+					q += .25;
+				}
+				qa++;
+				iH = document.createElement('h3');
+				iH.innerHTML = qa;
+				document.querySelector('#quarters').appendChild(iH);
+			}
+			else if(a%q <= .25){
+				for(q; q < a; qa++){
+					q += .25;
+				}
+				iH = document.createElement('h3');
+				iH.innerHTML = qa;
+				document.querySelector('#quarters').appendChild(iH);
+			}
+
+			var na1 = a-(qa*.25);
+			na1 = Math.round(na1 * 100) / 100;
+
+			return na1;
+		}
+
+		function dimes(a){
+			var da = 0;
+			var d = .10;
+
+			if(a%d == 0){
+				for(d; d < a; da++){
+					d += .10;
+				}
+				da++;
+				iH = document.createElement('h3');
+				iH.innerHTML = da;
+				document.querySelector('#dimes').appendChild(iH);
+			}
+			else if(a%d <= .10){
+				for(d; d < a; da++){
+					d += .10;
+				}
+				iH = document.createElement('h3');
+				iH.innerHTML = da;
+				document.querySelector('#dimes').appendChild(iH);
+			}
+
+			var na2 = a-(da*.10);
+			na2 = Math.round(na2 * 100) / 100;
+
+			return na2;
+		}
+
+		function nickels(a){
+			var na = 0;
+			var n = .5;
+
+			if(a%n == 0){
+				for(n; n < a; na++){
+					n += .05;
+				}
+				iH = document.createElement('h3');
+				iH.innerHTML = na;
+				document.querySelector('#nickels').appendChild(iH);
+			}
+			else if(a%n <= .05 || a%n >= .05){
+				for(n; n < a; na++){
+					n += .05;
+				}
+				na++;
+				iH = document.createElement('h3');
+				iH.innerHTML = na;
+				document.querySelector('#nickels').appendChild(iH);
+			}
+
+			var na3 = a-(na*.05);
+			na3 = Math.round(na3 * 100) / 100;
+
+
+			return na3;
+
+		}
+
+		function pennies(a){
+			var pa = 0;
+			var p = .01;
+
+			console.log(a)
+
+			// if (a == 0){
+			// 	iH = document.createElement('h3');
+			// 	iH.innerHTML = pa;
+			// 	document.querySelector('#pennies').appendChild(iH);
+			// }
+			if(a%p == 0){
+				for(p; p < a; pa++){
+					p += .01;
+				}
+				iH = document.createElement('h3');
+				iH.innerHTML = pa;
+				document.querySelector('#pennies').appendChild(iH);
+			}
+
+			var na4 = a-(pa*.01);
+			na4 = Math.round(na4 * 100) / 100;
+
+			return na4;
+
+		}
+
+		function sort() {
+			var a = document.querySelector("#full").value;
+			
+			na1 = quarters(a);
+
+			na2 = dimes(a);
+
+			na3 = nickels(a);
+
+			na4 = pennies(a);
+		}
+	</script>
+</body>
+</html>

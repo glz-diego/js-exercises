@@ -4,7 +4,12 @@
 	<title></title>
 </head>
 <body>
+	<input type="text" id="string">
+	<button id="ent">Enter</button>
 	<script>
+		var ent = document.getElementById('ent')
+		ent.addEventListener("click", sort);
+		
 		function WordCount(str) { 
   			return str.split(" ").length;
 		}
