@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alphabetize A String</title>
+</head>
+<body>
+	<h1>Alphabetize A String</h1>
+	<h2>String:</h2>
+	<input type="text" id="string" placeholder="Enter string">
+	<button id="ent">Enter</button>
+	<br>
+	<br>
+	<h3>Alphabetized String:</h3>
+	<h4 id="ans"></h4>
+	<script>
+		var ent = document.getElementById('ent')
+		ent.addEventListener("click", organize);
+
+		function organize(){
+		var str = document.querySelector('#string').value;
+			var ans = str.split('').sort().join('');
+			if (str != "") {
+				document.querySelector("#string").value = "";
+			}
+			iN = document.createElement('span');
+			iN.innerHTML = ans;
+			document.querySelector('#ans').appendChild(iN);
+			console.log(ans);
+		}
+	</script>
+</body>
+</html>
