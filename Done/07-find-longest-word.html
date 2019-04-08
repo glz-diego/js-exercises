@@ -6,18 +6,12 @@
 <body>
 	<h1>Find Longest Word</h1>
 	<h2>String:</h2>
-	<input type="text" id="string" placeholder="Enter string">
-	<button id="ent">Enter</button>
-	<br>
-	<br>
-	<h3>Alphabetized String:</h3>
-	<h4 id="ans"></h4>
+	<h3 style="margin-left: 20px"> A 24 week coding bootcamp is making me nerd out!</h3>
+	<h2>Longest Word:</h2>
+	<h3 id="ans" style="margin-left: 20px"></h3>
 	<script>
-		var ent = document.getElementById('ent')
-		ent.addEventListener("click", find);
-
+		var str = "A 24 week coding bootcamp is making me nerd out!";
 		function find(){
-			var str = document.querySelector('#string').value;
 			var array1 = str.match(/\w[a-z]{0,}/gi);
 			var result = array1[0];
 
@@ -28,7 +22,10 @@
 			}
 			return result;
 		}
-		console.log(find_longest_word('Web Development Tutorial'));
+		console.log(find(str));
+		iS = document.createElement('span');
+		iS.innerHTML = find(str);
+		document.querySelector('#ans').appendChild(iS);
 	</script>
 </body>
 </html>
