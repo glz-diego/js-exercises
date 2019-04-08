@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Uppercase Every Word</title>
 </head>
 <body>
-	<input type="text" id="string">
+	<h1>Uppercase Every Word</h1>
+	<h2>String:</h2>
+	<input type="text" id="string" placeholder="Enter string">
 	<button id="ent">Enter</button>
+	<br>
+	<br>
+	<h3>Uppercased String:</h3>
+	<h4 id="ans"></h4>
 	<script>
 		var ent = document.getElementById('ent')
-		ent.addEventListener("click", upper);
-		
-		function WordCount() { 
-  			return str.split(" ").length;
+		ent.addEventListener("click", uppercase);
+
+		function uppercase(){
+			var str = document.querySelector('#string').value;
+			// if (str != "") {
+			// 	document.querySelector("#string").value = "";
+			// }
+			var ans = str.split('');
+			var uppercase = [];
+	    
+			for(var i = 0; i < ans.length; i++){
+				uppercase.push(ans[i].charAt(0).toUpperCase()+ans[i].slice(1));
+			}
+
+			ans = str.join(' ');
+
+			uppercase.push(ans);
+
+			iN = document.createElement('span');
+			iN.innerHTML = str;
+			document.querySelector('#ans').appendChild(iN);
+			console.log(str);
+
 		}
-		console.log(WordCount("hello world"));
 	</script>
 </body>
 </html>
+
+<!-- <script type="text/javascript">
+	function uppercase(str)
+{
+  var array1 = str.split(' ');
+  var newarray1 = [];
+    
+  for(var x = 0; x < array1.length; x++){
+      newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+  return newarray1.join(' ');
+}
+console.log(uppercase("the quick brown fox"));
+</script> -->

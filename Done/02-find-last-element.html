@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Last Element</title>
+</head>
+<body>
+	<h1>Find Last Element</h1>
+	<ul>
+		<li>var item1 = ["one","two","three","four","five","six","seven"];</li>
+		<li>var item2 = "A really long string";</li>
+		<li>var item3 = [[1,2,3],["one","two"],[true, false, true]];</li>
+	</ul>
+	<h2>Last Elements:</h2>
+	<h3>
+		<ul id="ans"></ul>
+	</h3>
+	<script>
+		var last =  function(array, n) {
+			if (array == null) 
+				return void 0;
+			if (n == null) 
+				return array[array.length - 1];
+			return array.slice(Math.max(array.length - n, 0));
+		};
+		console.log(last(["one","two","three","four","five","six","seven"]));
+		var first = last(["one","two","three","four","five","six","seven"]);
+
+		console.log(last("A really long string"));
+		var second = last("A really long string");
+
+		console.log(last([[1,2,3],["one","two"],[true, false, true]]));
+		var third = last([[1,2,3],["one","two"],[true, false, true]]);
+
+		iS = document.createElement('li');
+		iS.innerHTML = first;
+		document.querySelector('#ans').appendChild(iS);
+
+		iS = document.createElement('li');
+		iS.innerHTML = second;
+		document.querySelector('#ans').appendChild(iS);
+
+		iS = document.createElement('li');
+		iS.innerHTML = third;
+		document.querySelector('#ans').appendChild(iS);
+	</script>
+</body>
+</html>

@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Find Longest Word</title>
 </head>
 <body>
-	<input type="text" id="string">
+	<h1>Find Longest Word</h1>
+	<h2>String:</h2>
+	<input type="text" id="string" placeholder="Enter string">
 	<button id="ent">Enter</button>
+	<br>
+	<br>
+	<h3>Alphabetized String:</h3>
+	<h4 id="ans"></h4>
 	<script>
 		var ent = document.getElementById('ent')
-		ent.addEventListener("click", sort);
-		
-		function WordCount(str) { 
-  			return str.split(" ").length;
+		ent.addEventListener("click", find);
+
+		function find(){
+			var str = document.querySelector('#string').value;
+			var array1 = str.match(/\w[a-z]{0,}/gi);
+			var result = array1[0];
+
+			for(var x = 1 ; x < array1.length ; x++){
+				if(result.length < array1[x].length){
+					result = array1[x];
+				} 
+			}
+			return result;
 		}
-		console.log(WordCount("hello world"));
+		console.log(find_longest_word('Web Development Tutorial'));
 	</script>
 </body>
 </html>
