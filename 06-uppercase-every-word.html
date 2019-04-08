@@ -6,52 +6,25 @@
 <body>
 	<h1>Uppercase Every Word</h1>
 	<h2>String:</h2>
-	<input type="text" id="string" placeholder="Enter string">
-	<button id="ent">Enter</button>
-	<br>
-	<br>
-	<h3>Uppercased String:</h3>
-	<h4 id="ans"></h4>
+	<h3 style="margin-left: 20px">javascript is my most favorite language!</h3>
+	<h2>Uppercased String:</h2>
+	<h3 style="margin-left: 20px" id="ans"></h3>
 	<script>
-		var ent = document.getElementById('ent')
-		ent.addEventListener("click", uppercase);
-
-		function uppercase(){
-			var str = document.querySelector('#string').value;
-			// if (str != "") {
-			// 	document.querySelector("#string").value = "";
-			// }
-			var ans = str.split('');
+		function uppercase(str){
+			var ans = str.split(' ');
 			var uppercase = [];
-	    
-			for(var i = 0; i < ans.length; i++){
-				uppercase.push(ans[i].charAt(0).toUpperCase()+ans[i].slice(1));
+
+			for(var x = 0; x < ans.length; x++){
+				uppercase.push(ans[x].charAt(0).toUpperCase()+ans[x].slice(1));
 			}
-
-			ans = str.join(' ');
-
-			uppercase.push(ans);
-
-			iN = document.createElement('span');
-			iN.innerHTML = str;
-			document.querySelector('#ans').appendChild(iN);
-			console.log(str);
-
+			
+			return uppercase.join(' ');
 		}
+
+		console.log(uppercase("javascript is my most favorite language"));
+		iH = document.createElement('h4');
+		iH.innerHTML = uppercase("javascript is my most favorite language!");
+		document.querySelector('#ans').appendChild(iH);
 	</script>
 </body>
 </html>
-
-<!-- <script type="text/javascript">
-	function uppercase(str)
-{
-  var array1 = str.split(' ');
-  var newarray1 = [];
-    
-  for(var x = 0; x < array1.length; x++){
-      newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
-  }
-  return newarray1.join(' ');
-}
-console.log(uppercase("the quick brown fox"));
-</script> -->
